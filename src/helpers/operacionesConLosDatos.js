@@ -5,6 +5,12 @@ const obtenerTodasLasTareas = () => {
   return listaDeTareas;
 };
 
+const buscarPorId = ( id ) => {
+    if(listaDeTareas != null){
+        return listaDeTareas.find( elemento => elemento.id == id);
+    }
+}
+
 const guardarTarea = (nuevaTarea) => {
   if (listaDeTareas !== null) {
     let todasLasTareas = [...listaDeTareas, nuevaTarea];
@@ -16,20 +22,21 @@ const guardarTarea = (nuevaTarea) => {
 };
 
 const editarTarea = (tareaConCambios) => {
-  const tareasConCambios = listaDeTareas.map((elemento) => {
-    if (elemento.id == tareaConCambios.id) {
-      elemento.tarea = tareaConCambios.tarea;
-      elemento.tipo = tareaConCambios.tipo;
-      elemento.prioridad = tareaConCambios.prioridad;
-    }
-  });
 
-  localStorage.setItem("tareas", JSON.stringify(tareasConCambios));
+    for(let i = 0; i < listaDeTareas.length; i ++) {
+        if( listaDeTareas[i].id == tareaConCambios.id ) {
+            listaDeTareas[i].tarea = tareaConCambios.tarea;
+            listaDeTareas[i].tipo = tareaConCambios.tipo;
+            listaDeTareas[i].prioridad = tareaConCambios.prioridad;
+        }
+    }
+
+  localStorage.setItem("tareas", JSON.stringify(listaDeTareas));
 };
 
 const eliminarTarea = (idTarea) => {
-  const tareasActualizadas = listaDeTareas.filter((elemento) => elemento.id !== idTarea );
+  const tareasActualizadas = listaDeTareas.filter((elemento) => elemento.id != idTarea );
   localStorage.setItem("tareas", JSON.stringify(tareasActualizadas));
 };
 
-export { obtenerTodasLasTareas, guardarTarea, editarTarea, eliminarTarea };
+export { obtenerTodasLasTareas, guardarTarea, editarTarea, eliminarTarea, buscarPorId };

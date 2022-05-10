@@ -8,3 +8,56 @@
 #btn-agregar {
     width: 100%;
 }
+
+.ALTA {
+    background-color: red;
+    color: white;
+    margin-bottom: 2px;
+    padding: 7px;
+}
+
+.MEDIA {
+    background-color: yellow;
+    color: black;
+    margin-bottom: 2px;
+    padding: 7px;
+}
+
+.BAJA {
+    background-color: orange;
+    color: white;
+    margin-bottom: 2px;
+    padding: 7px;
+}
+
+.error {
+    color: red;
+}
+
+.elementos-tarea {
+    display: flex;
+}
+.elementos-tarea  p{
+    background-color: blueviolet;
+    color: white;
+    margin: 4px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.completo {
+background-color: gray;
+}
+
+.btn-eliminar {
+    background-color: darkseagreen;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.btn-editar {
+    background-color: cadetblue;
+    border: 1px solid;
+    border-radius: 10px;
+}
