@@ -1,0 +1,10 @@
+#cabecera{
+    display: grid;
+    place-items: center;
+    height: 150px;
+    color: orange;
+}
+
+#btn-agregar {
+    width: 100%;
+}

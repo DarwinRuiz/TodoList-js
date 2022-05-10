@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style/app.css">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div id="root">
+        <nav class="bg-primary" id="cabecera">
+            <h1>Lista de Tareas</h1>
+        </nav>
+        <div id="contenedor" class="row p-3">
+            <div id="contenedor-formulario" class="col-4">
+                <h1>Nueva Tarea</h1>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="tarea">Tarea</label>
+                        <input type="text" class="form-control" id="tarea" placeholder="Tarea.....">
+                        <small id="small-tarea" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo-tarea">Tipo de Tarea</label>
+                        <select class="form-control" id="tipo-tarea">
+                            <option id="tipo-seleccionar" value="Seleccionar">Seleccionar</option>
+                            <option id="tipo-universidad" value="Universidad">Universidad</option>
+                            <option id="tipo-trabajo" value="Trabajo">Trabajo</option>
+                            <option id="tipo-tarea" value="Tarea de Casa">Tarea de Casa</option>
+                            <option id="tipo-personal" value="Personal">Personal</option>
+                        </select>
+                        <small id="small-tipo" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prioridad-tarea">Prioridad de Tarea</label>
+                        <select class="form-control" id="prioridad-tarea">
+                            <option id="prioridad-seleccionar"  value="Seleccionar">Seleccionar</option>
+                            <option id="prioridad-ALTA" value="ALTA">ALTA</option>
+                            <option id="prioridad-MEDIA" value="MEDIA">MEDIA</option>
+                            <option iid="prioridad-BAJA" value="BAJA">BAJA</option>
+                        </select>
+                        <small id="small-prioridad" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-group">
+                        <input id="btn-agregar" type="submit" value="Agregar" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+            <div id="contenedor-listas" class="col-8">
+                <h1>Tareas</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/helpers/operacionesConLosDatos.js" type="module"></script>
+    <script src="./src/App.js" type="module"></script>
+</body>
+
+</html>
